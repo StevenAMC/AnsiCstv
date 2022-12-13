@@ -2,8 +2,10 @@
 *
 
 # Unignore all with extensions
-!*.*
-
+!*.c
+!*.md
+!*.gitignore
+!*.h
 # Unignore all dirs
 !*/
 

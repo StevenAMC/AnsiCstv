@@ -12,7 +12,7 @@ void main(void)
     printf("0x%X\n",&offs);
 
 }
-
+//
 void sumalo(){
     
 }

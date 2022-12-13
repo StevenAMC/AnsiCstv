@@ -6,6 +6,8 @@
 !*.md
 !*.gitignore
 !*.h
+!*.jpg
+!*.png
 # Unignore all dirs
 !*/
 

@@ -8,11 +8,18 @@
 void motorControl1(uint8_t state);
 void motorControl2(uint8_t state);
 void motorControl3(uint8_t state);
-
 void (*ptrFunct)(uint8_t);
+
+void motorsController(void (*ptrFunct)(uint8_t),uint8_t state);
+//* Indenpendencia de la libreria
+
 
 void main(void)
 {
+    motorsController(motorControl1,MOTOROFF);
+    motorsController(motorControl2,MOTORON);
+    motorsController(motorControl3,MOTORON);
+
     ptrFunct = motorControl1;
     //*Llamado de la funcion por medio del puntero
     (*ptrFunct)(MOTORON);
@@ -42,4 +49,8 @@ void motorControl3(uint8_t state)
         printf("Motor 3 = Activado\n");
     else
         printf("Motor 3 = Apagado\n");
+}
+
+void motorsController(void (*ptrFunct)(uint8_t),uint8_t state){
+    ptrFunct(state);
 }

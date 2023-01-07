@@ -13,6 +13,10 @@ cJSON *dataArray = cJSON_AddArrayToObject(jsonObj,"datos");
 cJSON_AddItemToArray(dataArray,cJSON_CreateNumber(777));
 cJSON_AddItemToArray(dataArray,cJSON_CreateNumber(999));
 
+cJSON *dataArray2 = cJSON_AddArrayToObject(jsonObj,"datos2");
+cJSON_AddItemToArray(dataArray2,cJSON_CreateNumber(115));
+cJSON_AddItemToArray(dataArray2,cJSON_CreateNumber(1515));
+
 
 
 
@@ -23,9 +27,10 @@ printf("EL JSONstr es: \n%s\n",jso_string);
 
 
 
-cJSON *arr = cJSON_GetObjectItem(jsonObj,"datos");
+cJSON *arr = cJSON_GetObjectItem(jsonObj,"datos2");
 char *jso_string2 = cJSON_Print(arr);
 printf("EL JSONstr es: \n%s\n",jso_string2);
+
 
 cJSON_Delete(jsonObj);
 cJSON_free(jso_string);
